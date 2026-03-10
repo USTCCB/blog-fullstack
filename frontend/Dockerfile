@@ -16,8 +16,8 @@ COPY package*.json ./
 RUN npm install --omit=dev
 
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.js ./
+# COPY --from=builder /app/public ./public  # public directory is optional
 
 EXPOSE 3000
 
