@@ -1,4 +1,4 @@
-FROM node:20-alpine AS builder
+FROM docker.m.daocloud.io/node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ COPY . .
 RUN npx prisma generate
 RUN npm run build
 
-FROM node:20-alpine
+FROM docker.m.daocloud.io/node:20-alpine
 
 WORKDIR /app
 
